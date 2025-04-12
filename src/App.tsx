@@ -144,8 +144,70 @@ function App() {
 
   return (
     <div className="min-h-screen p-8 bg-gray-50">
-     
-    </div>
+    <Card className="max-w-2xl mx-auto p-8">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-xl font-semibold">
+          Question {currentQuestionIndex + 1} of {questions.length}
+        </h2>
+        <div className="flex items-center gap-2">
+          <Timer className="w-5 h-5" />
+          <span className="font-mono">{timeLeft}s</span>
+        </div>
+      </div>
+
+      <Progress value={(timeLeft / 30) * 100} className="mb-8" />
+
+      <div className="mb-8">
+        <p className="text-lg leading-relaxed">
+          {words.map((word, index) => {
+            if (word === '_____________') {
+              const blankIndex = words.slice(0, index).filter(w => w === '_____________').length;
+              return (
+                <span
+                  key={index}
+                  className={`inline-block min-w-[100px] mx-1 px-3 py-1 border-2 rounded ${
+                    selectedWords[blankIndex]
+                      ? 'bg-blue-100 border-blue-300 cursor-pointer'
+                      : 'border-gray-300'
+                  }`}
+                  onClick={() => {
+                    if (selectedWords[blankIndex]) {
+                      handleWordSelect(selectedWords[blankIndex]);
+                    }
+                  }}
+                >
+                  {selectedWords[blankIndex] || ''}
+                </span>
+              );
+            }
+            return <span key={index}> {word} </span>;
+          })}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 mb-8">
+        {currentQuestion.options.map((option, index) => (
+          <Button
+            key={index}
+            variant={selectedWords.includes(option) ? 'secondary' : 'outline'}
+            className="w-full"
+            onClick={() => handleWordSelect(option)}
+            disabled={selectedWords.includes(option)}
+          >
+            {option}
+          </Button>
+        ))}
+      </div>
+
+      <Button
+        className="w-full"
+        disabled={selectedWords.length !== currentQuestion.correctAnswer.length}
+        onClick={handleNextQuestion}
+      >
+        Next Question
+      </Button>
+    </Card>
+  </div>
   );
 }
 
