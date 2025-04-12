@@ -139,9 +139,6 @@ function App() {
   const currentQuestion = questions[currentQuestionIndex];
   const words = currentQuestion.question.split(' ');
 
-
-
-
   return (
     <div className="min-h-screen p-8 bg-gray-50">
     <Card className="max-w-2xl mx-auto p-8">
