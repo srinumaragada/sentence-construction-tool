@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import { Sparkles, Clock, ListChecks, Coins } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-interface SentenceConstructionProps {
-  // Props can be added here
-}
 
-export const Homepage: React.FC<SentenceConstructionProps> = () => {
+
+export const Homepage = () => {
   const navigate=useNavigate();
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-50">
@@ -16,10 +14,10 @@ export const Homepage: React.FC<SentenceConstructionProps> = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-full max-w-2xl" // Increased width
+        className="w-full max-w-2xl" 
       >
         <Card className="w-full mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden border-0 relative">
-          {/* Decorative elements */}
+         
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-100 rounded-full opacity-20 blur-xl"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 rounded-full opacity-20 blur-xl"></div>
@@ -81,15 +79,10 @@ export const Homepage: React.FC<SentenceConstructionProps> = () => {
             </div>
           </CardContent>
 
-          <CardFooter className="flex justify-between px-8 py-6 bg-gray-50/50 backdrop-blur-sm border-t border-gray-100/50">
+          <CardFooter className="flex justify-center px-8 py-6 bg-gray-50/50 backdrop-blur-sm border-t border-gray-100/50">
+           
             <Button 
-              variant="outline" 
-              className="px-8 py-3 text-base transition-all hover:scale-[1.02] hover:shadow-sm border-gray-300"
-            >
-              Back
-            </Button>
-            <Button 
-            onClick={()=> navigate("/questionpage")}
+            onClick={()=> navigate("/quizpage")}
               className="px-8 py-3 text-base bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all hover:scale-[1.02] hover:shadow-lg shadow-blue-200/50"
             >
               Start Challenge
