@@ -23,7 +23,7 @@ function QuizPage() {
   const [hasProcessedLastQuestion, setHasProcessedLastQuestion] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/questions')
+    fetch(`${import.meta.env.VITE_API_URL}/questions`)
       .then(res => res.json())
       .then(data => setQuestions(data))
       .catch(error => setError(error.message));
