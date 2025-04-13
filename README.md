@@ -169,7 +169,6 @@ You can also extend the application by adding creative features such as:
 
 - Animations for the timer or transitions between questions.
 - Progress bar showing the remaining questions.
-- Sound effects for time warnings or correct/incorrect answers.
 
 ---
 
