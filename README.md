@@ -1,4 +1,4 @@
-# Sentence Construction Tool
+## Sentence Construction Tool
 
 ## Overview
 
@@ -34,6 +34,16 @@ The **Sentence Construction Tool** is an interactive web application built with 
 
 8. **Data Fetching**: 
    - The application fetches question data from a provided JSON API using **JSON Server** to simulate a backend.
+
+---
+
+## Live Demo
+
+You can try the live demo of the **Sentence Construction Tool** here:
+
+[**Live Demo**](https://sentenceconstructiontool.netlify.app/)
+
+This demo shows you how the tool works and provides an interactive experience with incomplete sentences and word options.
 
 ---
 
@@ -178,5 +188,4 @@ This project is licensed under the MIT License.
 
 ---
 
-This **README** provides all the necessary details about the project, including setup, deployment, and the technical stack used. It’s structured to guide users through the process of setting up the app locally, deploying it, and troubleshooting common issues.
-
+This **README** provides all the necessary details about the project, including setup, deployment, live demo, and the technical stack used. It’s structured to guide users through the process of setting up the app locally, deploying it, and troubleshooting common issues.
